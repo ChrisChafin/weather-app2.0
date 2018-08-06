@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Weather App</title>
+  <link rel="icon" href="img/favicon-sun-o.ico" type="image/x-icon">
+  <meta name="description" content="Weather App">
+  <meta name="author" content="Chris Chafin">
+
+  <script src="https://use.fontawesome.com/3ce2a5fe82.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="weather-2.css">
+
+</head>
+
+<body>
+  <div id="video-bg"></div>
+  <div id="results">
+    <h1>Current Weather for <h1 id="location"></h1></h1>
+    <h1 id="temp"></h1>
+    <form>
+      <div class="form-group">
+        <input type="city" class="form-control" id="cityName" aria-describedby="citylHelp" placeholder="Enter City Name">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <button id="convert">Temp Conversion</button>
+      <a href="https://github.com/ChrisChafin">This project on Github</a>
+  </div>
+
+
+  <!--Always, always, always load your jQuery first-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://darkskyapp.github.io/skycons/skycons.js"></script>
+  <script src="weather-2.js"></script>
+</body>
+</html>
