@@ -9,7 +9,7 @@
   <meta name="description" content="Weather App">
   <meta name="author" content="Chris Chafin">
 
-  <script src="https://use.fontawesome.com/3ce2a5fe82.js"></script>
+  <!-- <script src="https://use.fontawesome.com/3ce2a5fe82.js"></script> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link rel="stylesheet" href="weather-2.css">
 
@@ -20,14 +20,14 @@
   <div id="results">
     <h1>Current Weather for <h1 id="location"></h1></h1>
     <h1 id="temp"></h1>
-    <form>
+    <form id="cityForm" onsubmit="getFormWeather();return false;">
       <div class="form-group">
         <input type="city" class="form-control" id="cityName" aria-describedby="citylHelp" placeholder="Enter City Name">
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submitCity" class="btn btn-primary">Submit</button>
     </form>
     <button id="convert">Temp Conversion</button>
-      <a href="https://github.com/ChrisChafin">This project on Github</a>
+      <a href="https://github.com/ChrisChafin/weather-app2.0">This project on Github</a>
   </div>
 
 

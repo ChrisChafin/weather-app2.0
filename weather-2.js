@@ -101,6 +101,31 @@ function convertTemp() {
   }
 }
 
+//weather call for form submission
+function getFormWeather(){
+  //reset url
+  url = 'http://api.openweathermap.org/data/2.5/weather?q=';
+  //reset current location name
+  var city = "";
+  //pass form data and append to url
+  var x = document.getElementById("cityForm");
+  var text = "";
+  var i;
+  for (i = 0; i < x.length ;i++) {
+      city += x.elements[i].value;
+  }
+  $('#location').empty();
+  // document.getElementById("location").innerHTML = city;
+  url += city;
+  url += '&units=imperial';
+  url += '&appid=' + key;
+  console.log(url)
+  getWeather();
+  //clear the bg
+
+  //reset bg on success
+}
+
 //IIFE for click event
 $(function() {
   getLocation();
