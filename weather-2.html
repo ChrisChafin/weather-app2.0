@@ -16,25 +16,40 @@
 </head>
 
 <body>
-  <div id="video-bg"></div>
+  <!-- video -->
+  <div id="video-bg">
+    <video width="1102" height="720" id="intro-video" muted="" autoplay="" loop="" src="vids/default.mp4?t=928"></video>
+  </div>
+  <!-- text -->
   <div id="results">
     <h1>Current Weather for <h1 id="location"></h1></h1>
     <h1 id="temp"></h1>
-    <form id="cityForm" onsubmit="getFormWeather();return false;">
+    <!-- city form -->
+    <form id="cityForm" onsubmit="getCityWeather();return false;">
       <div class="form-group">
         <input type="city" class="form-control" id="cityName" aria-describedby="citylHelp" placeholder="Enter City Name">
       </div>
-      <button type="submitCity" class="btn btn-primary">Submit</button>
     </form>
-    <button id="convert">Temp Conversion</button>
-      <a href="https://github.com/ChrisChafin/weather-app2.0">This project on Github</a>
+    <h4>or</h4>
+    <!-- zip form -->
+    <form id="zipForm" onsubmit="getZipWeather();return false;">
+      <div class="form-group">
+        <input type="zip" class="form-control" id="zipCode" aria-describedby="zipHelp" placeholder="Enter Zip">
+      </div>
+    </form>
+    <!-- Form for zip code -->
+    <!-- Buttons -->
+    <div id="btnsDiv">
+      <button id="convert">Temp Conversion</button>
+      <button id="currentLocation">My Location</button>
+    </div>
+      <a href="https://github.com/ChrisChafin/weather-app2.0" target="_blank">This project on Github</a>
   </div>
 
 
   <!--Always, always, always load your jQuery first-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-  <script src="https://darkskyapp.github.io/skycons/skycons.js"></script>
   <script src="weather-2.js"></script>
 </body>
 </html>

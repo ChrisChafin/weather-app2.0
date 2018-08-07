@@ -1,8 +1,10 @@
+//globals
+//I would not have the key stored here in a customer prod site, obviously
 const key = '6ab021994bb96f9191c11d763e575bab';
 var condition = "";
 var lat = "";
 var lon = "";
-var url = 'http://api.openweathermap.org/data/2.5/weather?';
+var url = '';
 
 var tempF = '';
 var tempC = '';
@@ -10,6 +12,8 @@ var tempC = '';
 
 // location is obtained, then the getWeather function will be triggered
 function getLocation() {
+  url = 'http://api.openweathermap.org/data/2.5/weather?';
+  $('#location').empty();
   if(navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(showPosition);
   } else {
@@ -30,7 +34,8 @@ function getWeather(){
     method: 'GET',
     datatype: 'json',
     success: function(data){
-      // let weatherStr= "802";
+      $('#video-bg').empty();
+      // let weatherStr= "602";
       let weatherStr = data.weather[0].id.toString();
       let search = weatherStr.match(/\d/)
       let weatherCode = search[0];
@@ -83,6 +88,7 @@ function getWeather(){
         videl.load(); // load the video (it will autoplay because we've set it as a parameter of the video)
                
       }
+      $('#convert').show();
     },
     error: function(){
       $('#results').html('Ya done fucked up');
@@ -101,8 +107,8 @@ function convertTemp() {
   }
 }
 
-//weather call for form submission
-function getFormWeather(){
+//weather call for ctiy form submission
+function getCityWeather(){
   //reset url
   url = 'http://api.openweathermap.org/data/2.5/weather?q=';
   //reset current location name
@@ -110,24 +116,42 @@ function getFormWeather(){
   //pass form data and append to url
   var x = document.getElementById("cityForm");
   var text = "";
-  var i;
   for (i = 0; i < x.length ;i++) {
       city += x.elements[i].value;
   }
   $('#location').empty();
-  // document.getElementById("location").innerHTML = city;
   url += city;
   url += '&units=imperial';
   url += '&appid=' + key;
-  console.log(url)
   getWeather();
-  //clear the bg
-
-  //reset bg on success
+  //clearing input to avoid form submission clashing
+  $('#cityForm')[0].reset()
 }
 
-//IIFE for click event
+// call for zip submission
+function getZipWeather(){
+  //reset url
+  url = 'http://api.openweathermap.org/data/2.5/weather?zip=';
+  //reset current location name
+  var zip = "";
+  //pass form data and append to url
+  var z = document.getElementById("zipForm");
+  var words = "";
+  for (i = 0; i < z.length ;i++) {
+      zip += z.elements[i].value;
+  }
+  $('#location').empty();
+  url += zip;
+  url += '&units=imperial';
+  url += '&appid=' + key;
+  getWeather();
+  //clearing input to avoid form submission clashing
+  $('#zipForm')[0].reset()
+}
+
+//IIFE for click events
 $(function() {
-  getLocation();
+  $('#convert').hide()
+  $('#currentLocation').on('click', getLocation)
   $('#convert').on('click', convertTemp)
 });
