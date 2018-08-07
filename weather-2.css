@@ -25,7 +25,7 @@ video {
   background: rgba(0,0,0,0.3);
   color: white;
   padding: 2rem;
-  width: 33%;
+  width: 40%;
   margin:2rem;
   float: right;
   font-size: 1.2rem;
@@ -36,20 +36,21 @@ h1 {
   margin-top: 0;
   letter-spacing: .3rem;
 }
-#results button { 
-  display: block;
-  width: 80%;
+#results #btnsDiv button { 
+  display: inline-block;
+  width: 49%;
   padding: .4rem;
   border: none; 
   margin: 1rem auto; 
   font-size: 1.3rem;
   background: rgba(255,255,255,0.23);
   color: #fff;
-  border-radius: 3px; 
+  border-radius: 5px; 
   cursor: pointer;
-  transition: .3s background;
+  transition: .5s background;
 }
-#results button:hover { 
+
+#results #btnsDiv button:hover { 
    background: rgba(0,0,0,0.5);
 }
 
