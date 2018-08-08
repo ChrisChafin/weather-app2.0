@@ -64,10 +64,20 @@ a {
 a:hover{
   background:rgba(0,0,0,0.9);
 }
-@media screen and (max-width: 500px) { 
+@media screen and (max-width: 768px) { 
   div{width:70%;} 
-}
-@media screen and (max-device-width: 800px) {
-  html { background: url(https://thenewcode.com/assets/images/polina.jpg) #000 no-repeat center center fixed; }
-  #bgvid { display: none; }
+
+  #results h1 {
+    font-size: 1.5rem;
+  }
+
+  #results #btnsDiv button {
+    font-size: 1rem;
+    width: unset;
+  }
+
+  #results a {
+    font-size: 1rem;
+  }
+
 }

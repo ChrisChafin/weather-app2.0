@@ -152,6 +152,12 @@ function getZipWeather(){
 //IIFE for click events
 $(function() {
   $('#convert').hide()
+  $('#zipForm').on('click', function(){
+    $('#cityForm')[0].reset();
+  })
+  $('#cityForm').on('click', function(){
+    $('#zipForm')[0].reset();
+  })
   $('#currentLocation').on('click', getLocation)
   $('#convert').on('click', convertTemp)
 });
