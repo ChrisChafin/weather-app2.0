@@ -156,12 +156,12 @@ $(function() {
   $('#error').hide()
   //hide temp conversion button
   $('#convert').hide()
-  // reset city input if zip is clicked
-  $('#zipForm').on('click', function(){
+  // reset city input if zip is clicked or focused
+  $('#zipCode').on('click || focus', function(){
     $('#cityForm')[0].reset()
   })
-  // reset zip input in city is clicked
-  $('#cityForm').on('click', function(){
+  // reset zip input in city is clicked or focused
+  $('#cityForm').on('click || focus', function(){
     $('#zipForm')[0].reset()
   })
   // get current location on click
