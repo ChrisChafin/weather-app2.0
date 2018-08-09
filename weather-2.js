@@ -91,7 +91,8 @@ function getWeather(){
       $('#convert').show();
     },
     error: function(){
-      $('#results').html('Ya done fucked up');
+      $('#results').hide()
+      $('#error').show()
     }
   });
 }
@@ -151,13 +152,20 @@ function getZipWeather(){
 
 //IIFE for click events
 $(function() {
+  // hide error scree
+  $('#error').hide()
+  //hide temp conversion button
   $('#convert').hide()
+  // reset city input if zip is clicked
   $('#zipForm').on('click', function(){
-    $('#cityForm')[0].reset();
+    $('#cityForm')[0].reset()
   })
+  // reset zip input in city is clicked
   $('#cityForm').on('click', function(){
-    $('#zipForm')[0].reset();
+    $('#zipForm')[0].reset()
   })
+  // get current location on click
   $('#currentLocation').on('click', getLocation)
+  // click event for temp conversion
   $('#convert').on('click', convertTemp)
 });
